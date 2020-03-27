@@ -5,8 +5,8 @@ const Home = () => {
     return (
         <div>
             <h1>Home</h1>
-            <Link className="flexin" to={"/pizza"}>
-                <div className="order-here">Get Orderin'</div>
+            <Link className="pizza" to={"/pizza"}>
+                <div className="order-here">Order Pizza</div>
             </Link>
         </div>
     )

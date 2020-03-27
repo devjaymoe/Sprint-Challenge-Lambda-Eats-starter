@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom';
 
 const formSchema = yup.object().shape({
     name: yup.string().required("please include a name").min(2, "name must be more than 2 characters"),
-    size: yup.string().required("must include pizza size"),
-    pepperoni: yup.boolean().oneOf([true], "please select toppings"),
-    mushrooms: yup.boolean().oneOf([true], "please select toppings"),
-    pineapple: yup.boolean().oneOf([true], "please select toppings"),
-    onions: yup.boolean().oneOf([true], "please select toppings"),
+    size: yup.string(),
+    pepperoni: yup.boolean(),
+    mushrooms: yup.boolean(),
+    pineapple: yup.boolean(),
+    onions: yup.boolean(),
     instructions: yup.string()
 });
 
@@ -22,10 +22,10 @@ export default function Form() {
     const [formState, setFormState] = useState({
         name: "",
         size: '',
-        pepperoni: '',
-        mushrooms: '',
-        pineapple: '',
-        onions: '',
+        pepperoni: false,
+        mushrooms: false,
+        pineapple: false,
+        onions: false,
         instructions: ""
     });
 
@@ -54,10 +54,10 @@ export default function Form() {
                 setFormState({
                     name: "",
                     size: '',
-                    pepperoni: '',
-                    mushrooms: '',
-                    pineapple: '',
-                    onions: '',
+                    pepperoni: false,
+                    mushrooms: false,
+                    pineapple: false,
+                    onions: false,
                     instructions: ""
                 });
             })
